@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-tb+DT27ajVBqE5LqH5FgaJmzxQ6vyoMrr4kvaiukkRgXEmuIe74GJ+tWlsIoq6vFSTpw9Hugcc+rkTPXUCG28A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#top-color-splash { 
+    width: 100%; 
+    height: 4px; 
+    background: #EB6361;
+}
+
+#contact {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#contact h1 {
+    text-align: left;
+    font-size: 24px;
+    color: blue;
+}
+
+#contact h2 {
+    text-align: left;
+    font-size: 24px;
+    color: rgb(11, 11, 13);
+    font-weight: Normal;
+}
+#contact p {
+    text-align: left;
+    font-size: 15px;
+    color: rgb(130, 130, 132);
+    font-weight: Normal;
+}
+
+.contact-content {
+    display: flex;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.info {
+    margin-bottom: 10px;
+}
+
+.fa {
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#contact form {
+    margin-top: 20px;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#contact form button {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background-color: BLACK;
+    padding: 10px;
+}
+
+.error {
+    border-color: red;
+}
+
+</style>
+<body>
+    <section id="contact">
+        <h1>LIÊN HỆ</h1>
+        <div id="top-color-splash"></div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Thông tin</h2>
+                <div class="info">
+                    <i class="fa fa-map-marker"></i>
+                    <p> 📍 Kp.6, P.Linh Trung, Tp.Thủ Đức, TP.HCM</p>
+                </div>
+                <div class="info">
+                    <i class="fa fa-envelope"></i>
+                    <p> 📧  infor@edu.vn</p>
+                </div>
+                <div class="info">
+                    <i class="fa fa-phone"></i>
+                    <p> 📞  +84 2837252002</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#" onsubmit="return confirmFormSubmit();">
+                    <h2>Hãy liên lạc với chúng tôi bất cứ khi nào!!!</h2>
+                    <label for="fullname">Họ và tên:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên">
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email">
+                    <br>
+                    <label for="phone">Số điện thoại:</label>
+<input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                    <br>
+                    <label for="message">Nội dung:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Nhập nội dung"></textarea>
+                    <br>
+                    <button type="submit">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+    function confirmFormSubmit() {
+        var name = document.getElementById("fullname").value;
+        var email = document.getElementById("email").value;
+        var phoneNumber = document.getElementById("phone").value;
+        var feedback = document.getElementById("message").value;
+
+        var message = "Thông tin của bạn:\n\n" +
+            "Họ và tên: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Số điện thoại: " + phoneNumber + "\n" +
+            "Nội dung góp ý: " + feedback;
+
+        if (confirm(message)) {
+            // If user confirms, submit the form
+            return true;
+        } else {
+            // If user cancels, prevent form submission
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>
